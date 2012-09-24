@@ -1,0 +1,22 @@
+#!/system/bin/sh
+#
+# Print startup info
+#
+L="log -p i -t cm"
+
+$L "Welcome to Android `getprop ro.build.version.release` / CyanogenMod-`getprop ro.cm.version`";
+$L "   _____ __  __      _           "
+$L "  / ____|  \/  |    | |          "
+$L " | |    | \  / |    | |__  _   _ "
+$L " | |    | |\/| |    | '_ \| | | |"
+$L " | |____| |  | |    | |_) | |_| |"
+$L "  \_____|_|  |_|    |_.__/ \__, |"
+$L "                            __/ |"
+$L "                           |___/ "
+$L "  __  __                         "
+$L " |  \/  |                        "
+$L " | \  / | _  _ __   ___          "
+$L " | |\/| || || '__\ / _ \         "
+$L " | |  | || || |   | (_) |        "
+$L " |_|  |_||_||_|    \___/         "
+$L "                                 ";

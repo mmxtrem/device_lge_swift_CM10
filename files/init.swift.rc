@@ -1,0 +1,247 @@
+on boot
+	mkdir /system/etc/wifi 0770 system wifi
+	chmod 0770 /system/etc/wifi
+	chmod 0660 /system/etc/wifi/wpa_supplicant.conf
+	chown system wifi /system/etc/wifi/wpa_supplicant.conf
+	mkdir /data/misc/wifi 0770 system wifi
+	mkdir /data/misc/wifi/sockets 0770 system wifi
+	chmod 0770 /data/misc/wifi
+	chmod 0660 /data/misc/wifi/wpa_supplicant.conf
+	chown system wifi /data/misc/wifi
+	chown system wifi /data/misc/wifi/wpa_supplicant.conf
+	mkdir /data/misc/dhcp 0770 dhcp dhcp
+	chown dhcp dhcp /data/misc/dhcp
+	mkdir /data/system 0775 system system
+	mkdir /data/xt9 0777 system system
+	chown system system /data/xt9
+	chmod 0777 /data/xt9
+	mkdir /data/system/theme 7777 radio radio
+	chown system radio /dev/rtc1
+	chmod 0660 /dev/rtc1
+	chown system audio /dev/msm_preproc_ctl
+	chmod 0660 /dev/msm_preproc_ctl
+	chown system audio /dev/msm_pcm_dec
+	chmod 0660 /dev/msm_pcm_dec
+	chown root root /dev/system_bus_freq
+	chmod 0666 /dev/system_bus_freq
+	chown root root /dev/cpu_dma_latency
+	chmod 0666 /dev/cpu_dma_latency
+	chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
+	chmod 0660 /sys/module/bluetooth_power/parameters/power
+	chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
+	chmod 0666 /sys/class/rfkill/rfkill0/type
+	chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
+	chmod 0666 /sys/class/rfkill/rfkill0/state
+	chown bluetooth bluetooth /proc/bluetooth/sleep/proto
+	chmod 0660 /proc/bluetooth/sleep/proto
+	chown system system /sys/module/sco/parameters/disable_esco
+	chown bluetooth bluetooth /dev/ttyHS0
+	chmod 0666 /dev/ttyHS0
+	chmod 0666 /dev/msm_snd
+	mkdir /data/misc/hcid 0770 bluetooth bluetooth
+	chmod 0666 /sys/class/timed_output/vibrator/enable
+	chmod 0666 /sys/class/timed_output/vibrator/amp
+	chmod 0666 dev/akm8973_aot
+	chmod 0666 dev/bma150
+	mkdir /data/radio 0770 radio radio
+	chmod 0777 /data/radio/qmux_connect_socket
+	chmod 7777 /data/radio/*
+	chmod 0666 /dev/msm_camera/config0
+	chmod 0666 /dev/msm_camera/control0
+   	chmod 0666 /dev/msm_camera/frame0
+	chown system system /sys/class/backlight/rt9393/brightness
+	chown system system /sys/class/backlight/rt9393/max_brightness
+	chown 666  /sys/class/backlight/rt9393/max_brightness
+	chown 666  /sys/class/backlight/rt9393/actual_brightness
+	chown system graphics /dev/hw3d
+	chmod 0660 /dev/hw3d
+	chown system graphics /dev/kgsl
+	chmod 0666 /dev/kgsl
+	chmod 0666 /dev/kgsl-3d0
+	chmod 0666 /dev/kgsl-2d0
+	chmod 0666 /dev/kgsl-2d1
+	chmod 0666 /dev/genlock
+	chmod 0666 /dev/graphics/fb0
+	chmod 0666 /dev/pmem
+	chown system audio /dev/msm_aac
+	chmod 0660 /dev/msm_aac
+	chown system audio /dev/msm_amrnb_in
+	chmod 0660 /dev/msm_amrnb_in
+	chown system audio /dev/msm_amrnb
+	chmod 0660 /dev/msm_amrnb
+	chown system audio /dev/msm_qcelp
+	chmod 0660 /dev/msm_qcelp
+	chown system audio /dev/msm_evrc
+	chmod 0660 /dev/msm_evrc
+	chown system audio /dev/msm_voicememo
+	chmod 0660 /dev/msm_voicememo
+	chown system graphics /dev/msm_rotator
+	chmod 0660 /dev/msm_rotator
+	chown system audio /dev/msm_preproc_ctl
+	chmod 0660 /dev/msm_preproc_ctl
+	chown system audio /dev/pmem_smipool
+	chmod 0660 /dev/pmem_smipool
+	chown system audio /dev/pmem_audio
+	chmod 0660 /dev/pmem_audio
+	chown system audio /dev/msm_amr_in
+	chmod 0660 /dev/msm_amr_in
+	chown system audio /dev/msm_amrwb
+	chmod 0660 /dev/msm_amrwb
+	chown system audio /dev/msm_vidc_reg
+	chmod 0660 /dev/msm_vidc_reg
+	chown system audio /dev/msm_vidc_dec
+	chmod 0660 /dev/msm_vidc_dec
+	chown system audio /dev/msm_vidc_enc
+	chmod 0660 /dev/msm_vidc_enc
+	mkdir /data/system/inputmethod 0777 system system
+	chmod 0666 /dev/oncrpc/3000008c:00040000
+	chmod 0666 /dev/oncrpc/3000000e:00060000
+	copy /proc/last_kmsg /data/dontpanic/last_kmsg
+	chown root log /data/dontpanic/last_kmsg
+	chmod 0640 /data/dontpanic/last_kmsg
+	write /proc/sys/net/ipv6/conf/rmnet0/disable_ipv6 1
+	write /proc/sys/net/ipv6/conf/rmnet1/disable_ipv6 1
+	write /proc/sys/net/ipv6/conf/rmnet2/disable_ipv6 1
+	write /proc/sys/net/ipv6/conf/rmnet0/accept_ra 2
+	write /proc/sys/net/ipv6/conf/rmnet1/accept_ra 2
+	write /proc/sys/net/ipv6/conf/rmnet2/accept_ra 2
+	mkdir /data/misc/wifi 0770 wifi wifi
+	mkdir /data/misc/wifi/sockets 0770 wifi wifi
+	mkdir /data/misc/dhcp 0770 dhcp dhcp
+	chown dhcp dhcp /data/misc/dhcp
+	mkdir /data/misc/hotspot 0770 system hotspot
+
+service wpa_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant -Dwext -iwlan0 -c/data/misc/wifi/wpa_supplicant.conf
+	class main
+	socket wpa_wlan0 dgram 660 wifi wifi
+	disabled
+	oneshot
+
+service dhcpcd_wlan0 /system/bin/dhcpcd -BKA
+	class main
+	disabled
+	oneshot
+
+service iprenew_wlan0 /system/bin/dhcpcd -n
+	class main
+	disabled
+	oneshot
+
+service dhcpcd_bnep0 /system/bin/dhcpcd -B
+	class main
+	disabled
+	oneshot
+
+service iprenew_bnep0 /system/bin/dhcpcd -n
+	class main
+	disabled
+	oneshot
+
+service dhcp-service /system/bin/netcfg wlan0 dhcp
+	class main
+	oneshot
+
+service qmuxd /system/bin/qmuxd
+	class main
+	user radio
+	group radio audio bluetooth
+
+service btld /system/bin/logwrapper /system/bin/btld -lpm 1
+	class main
+	user root
+	group bluetooth net_bt_admin
+	disabled
+	oneshot
+
+service bluetoothd /system/bin/bluetoothd -n
+	class main
+    	socket bluetooth stream 660 bluetooth bluetooth
+    	socket dbus_bluetooth stream 660 bluetooth bluetooth
+    	group bluetooth net_bt_admin misc			
+    	disabled			
+    	socket dbus_bluetooth stream 660 bluetooth bluetooth
+
+service hciattach /system/bin/brcm_patchram_plus --enable_hci --baudrate 3000000 --patchram /system/bin/BCM4325D1_004.002.004.0262.0270.hcd /dev/ttyHS0
+	class main
+	user bluetooth
+	group bluetooth net_bt_admin
+	disabled
+
+service akmd2 /system/bin/akmd2
+	class main
+	user compass
+	group compass misc input
+
+service hfag /system/bin/sdptool add --channel=10 HFAG
+	class main
+	user bluetooth
+	group bluetooth net_bt_admin
+	disabled
+	oneshot
+
+service hsag /system/bin/sdptool add --channel=11 HSAG
+	class main
+	user bluetooth
+	group bluetooth net_bt_admin
+	disabled
+	oneshot
+
+service opush /system/bin/sdptool add --channel=12 OPUSH
+	class main
+	user bluetooth
+	group bluetooth net_bt_admin
+	disabled
+	oneshot
+
+service pbap /system/bin/sdptool add --channel=19 PBAP
+	class main
+	user bluetooth
+	group bluetooth net_bt_admin
+	disabled
+	oneshot
+
+service ftp /system/bin/sdptool add --channel=20 FTP
+	class main
+	user bluetooth
+	group bluetooth net_bt_admin
+	disabled
+	oneshot
+
+service bugreport /system/bin/logwrapper /system/bin/dumpstate -d -v -o /storage/sdcard0/bugreports/bugreport
+	keycodes 114 139
+	class main
+	disabled
+	oneshot
+
+service compcache /system/bin/handle_compcache
+	class main
+	user root
+	group root
+	disabled
+
+on property:init.svc.wpa_supplicant=stopped
+	stop dhcpcd_wlan0
+
+on property:dev.bootcomplete=1
+	stop dhcp-service
+	start dhcp-service
+
+on property:persist.service.zram=10
+	start compcache
+
+on property:persist.service.zram=18
+	start compcache
+
+on property:persist.service.zram=26
+	start compcache
+
+on property:service.brcm.bt.mac=*
+	exec /system/bin/hwaddrs
+
+on property:init.svc.hcid=running
+	write /sys/devices/virtual/bluetooth/hci0/idle_timeout 7000
+
+#  Increase the read ahead cache from 4KB to 512KB (/data)
+#  write /sys/devices/virtual/mtd/mtd6/mtdblock6/queue/read_ahead_kb 512
+#  Increase the read ahead cache from 4KB to 512KB (/system)
+#  write /sys/devices/virtual/mtd/mtd6/mtdblock5/queue/read_ahead_kb 512

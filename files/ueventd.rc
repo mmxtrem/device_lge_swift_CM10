@@ -1,0 +1,301 @@
+/dev/null                 0666   root       root
+/dev/zero                 0666   root       root
+/dev/full                 0666   root       root
+/dev/ptmx                 0666   root       root
+/dev/tty                  0666   root       root
+/dev/random               0666   root       root
+/dev/urandom              0666   root       root
+/dev/ashmem               0666   root       root
+/dev/binder               0666   root       root
+/dev/rfkill               0660   wifi       wifi
+
+# logger should be world writable (for logging) but not readable
+/dev/log/*                0662   root       log
+
+# the msm hw3d client device node is world writable/readable.
+/dev/msm_hw3dc            0666   root       root
+/dev/hw3d		0666	root		root
+/dev/graphics/*		0666	system		graphics
+
+# gpu driver for adreno200 is globally accessible
+/dev/kgsl                 0666   root       root
+/dev/kgsl-3d0             0666   root       root
+/dev/kgsl-2d0             0666   root       root
+/dev/kgsl-2d1             0666   root       root
+/dev/genlock              0666   system     graphics
+/dev/msm_camera/*	0660	system		system
+/dev/msm_camera		0660	system		system 
+/dev/msm_camera/config0 		0660	system		system
+/dev/msm_camera/control0 		0660	system		system
+/dev/msm_camera/frame0 		0660	system		system 
+/dev/graphics/fb0 		0660	system		system 
+
+# these should not be world writable
+/dev/diag                 0660   radio      radio
+/dev/diag_arm9            0660   radio      radio
+/dev/android_adb          0660   adb        adb
+/dev/android_adb_enable   0660   adb        adb
+/dev/ttyMSM0              0600   bluetooth  bluetooth
+/dev/ttyHS0               0600   bluetooth  bluetooth
+/dev/uinput               0660   system     bluetooth
+/dev/alarm                0664   system     radio
+/dev/smdcntl0		0640	radio		radio
+/dev/smdcntl1		0640	radio		radio
+/dev/smdcntl2		0640	radio		radio
+/dev/ttyHSUSB0		0660	radio		radio
+/dev/cpuctl		0660	root		system
+/dev/msm_aac		0660	system		audio
+/dev/msm_mp3		0660	system		audio
+/dev/msm_preproc_ctl	0660	system		audio
+/dev/msm_pcm_ctl	0660	system		audio
+/dev/msm_pcm_dec	0660	system		audio
+/dev/msm_pcm_in		0660	system		audio
+/dev/msm_pcm_out	0660	system		audio
+
+#Begin changhyun3.kim 101227 froyo to gingerbread update
+/dev/rtc1                 0660   system     radio
+/dev/msm_rotator          0660   system     graphics
+/dev/pmem_smipool         0660   system     audio
+/dev/pmem_audio           0660   system     audio
+/dev/pmem_smipool         0660   system     camera
+/dev/msm_preproc_ctl      0660   system     audio
+/dev/msm_aac              0660   system     audio
+/dev/msm_voicememo        0660   system     audio
+/dev/msm_amrnb            0660   system     audio
+/dev/msm_amr_in           0660   system     audio
+/dev/msm_voicememo        0660   system     audio
+/dev/msm_amrwb            0660   system     audio
+/dev/msm_qcelp            0660   system     audio
+/dev/msm_evrc             0660   system     audio
+/dev/msm_vidc_reg         0660   system     audio
+/dev/msm_vidc_dec         0660   system     audio
+/dev/msm_vidc_enc         0660   system     audio
+#End changhyun3.kim
+
+/dev/tty0                 0660   root       system
+/dev/graphics/*           0660   root       graphics
+/dev/msm_hw3dm            0660   system     graphics
+/dev/input/*              0660   root       input
+/dev/eac                  0660   root       audio
+/dev/cam                  0660   root       camera
+/dev/pmem                 0660   system     graphics
+/dev/pmem_audio           0660   system     audio
+/dev/pmem_adsp*           0660   system     audio
+/dev/pmem_smipool*        0660   system     camera
+#/dev/pmem_camera*         0660   system     camera
+/dev/oncrpc/*             0660   root       system
+/dev/adsp/*               0660   system     audio
+/dev/snd/*                0660   system     audio
+/dev/mt9t013              0660   system     system
+/dev/msm_camera/*         0660   system     system
+/dev/akm8976_daemon       0640   compass    system
+/dev/akm8976_aot          0640   compass    system
+/dev/akm8973_daemon       0640   compass    system
+/dev/akm8973_aot          0640   compass    system
+/dev/bma150               0640   compass    system
+/dev/cm3602               0640   compass    system
+/dev/akm8976_pffd         0640   compass    system
+/dev/lightsensor          0640   system     system
+/dev/radio0               0644   fm_radio   fm_radio
+/dev/i2c-2                0664   root       system
+/dev/i2c-4                0664   root       system
+/dev/msm_pcm_out*         0660   system     audio
+/dev/msm_pcm_in*          0660   system     audio
+/dev/msm_voicememo        0660   system     audio
+/dev/msm_pcm_ctl*         0660   system     audio
+/dev/msm_snd*             0660   system     audio
+/dev/msm_mp3*             0660   system     audio
+/dev/msm_aac*             0660   system     audio
+/dev/audience_a1026*      0660   system     audio
+/dev/tpa2018d1*           0660   system     audio
+/dev/msm_audpre           0660   system     audio
+/dev/msm_audio_ctl        0660   system     audio
+/dev/htc-acoustic         0660   system     audio
+/dev/vdec                 0660   system     audio
+/dev/qce                  0660   system     audio
+/dev/q6venc               0660   system     audio
+/dev/snd/dsp              0660   system     audio
+/dev/snd/dsp1             0660   system     audio
+/dev/snd/mixer            0660   system     audio
+/dev/msm_pcm_lp_dec       0660   system     audio
+/dev/smd0                 0640   radio      radio
+/dev/qemu_trace           0666   system     system
+/dev/qemu_pipe            0666   system     system
+/dev/qmi                  0640   radio      radio
+/dev/qmi0                 0640   radio      radio
+/dev/qmi1                 0640   radio      radio
+/dev/qmi2                 0640   radio      radio
+/dev/bus/usb/*            0660   root       usb
+/dev/usb_accessory        0660   root       usb
+
+# CDMA radio interface MUX
+/dev/ts0710mux*           0640   radio      radio
+/dev/ppp                  0660   radio      vpn
+/dev/tun                  0640   vpn        vpn
+
+# video encoder on 720p-enabled 8k targets
+/dev/pmem_venc            0660   system     audio
+/dev/smd0		0666	root		radio
+/dev/oncrpc/*		0660	root		system
+/dev/msm_camera/*	0660	system		system
+/dev/msm_camera		0660	system		system 
+/dev/smdcntl0		0640	radio		radio
+/dev/smdcntl1		0640	radio		radio
+/dev/smdcntl2		0640	radio		radio
+/dev/ttyHSUSB0		0660	radio		radio
+/dev/cpuctl		0660	root		system
+/dev/msm_aac		0660	system		audio
+/dev/msm_mp3		0660	system		audio
+/dev/msm_preproc_ctl	0660	system		audio
+/dev/msm_pcm_ctl	0660	system		audio
+/dev/msm_pcm_dec	0660	system		audio
+/dev/msm_pcm_in		0660	system		audio
+/dev/msm_pcm_out	0660	system		audio
+/dev/video20		0666	system		camera
+
+# The compass device
+/dev/akm8973_daemon	0640	compass		system
+#/dev/akm8973_daemon	0666	system		system
+#/dev/akm8973_aot	0666	system		system
+#/dev/bma150		0666	system		system
+
+# sysfs properties
+/sys/devices/virtual/input/input*   enable      0660  root   input
+/sys/devices/virtual/input/input*   poll_delay  0660  root   input
+/sys/devices/virtual/usb_composite/*   enable      0664  root   system
+/sys/class/backlight/rt9393/* 0666 system system
+
+#permissions for video
+/dev/msm_vidc_reg         0660  system       audio
+/dev/msm_vidc_dec         0660  system       audio
+/dev/msm_vidc_enc         0660  system       audio
+
+#permissions for audio
+/dev/msm_amrnb            0660  system       audio
+/dev/msm_amrwb            0660  system       audio
+/dev/msm_aac              0660  system       audio
+/dev/msm_qcelp            0660  system       audio
+/dev/msm_evrc             0660  system       audio
+/dev/msm_fm               0660  system       audio
+/dev/msm_acdb             0660  system       audio
+/dev/msm_wma              0660  system       audio
+/dev/msm_wmapro           0660  system       audio
+/dev/msm_qcelp_in         0660  system       audio
+/dev/msm_evrc_in          0660  system       audio
+/dev/msm_preproc_ctl      0660  system       audio
+/dev/msm_a2dp_in          0640  system       audio
+/dev/msm_amrnb_in         0640  system       audio
+
+# Non-root permission qmuxd (QCT solution 00481665)
+/dev/smd7                 0640  radio        radio
+/dev/smdcntl0             0640  radio        radio
+/dev/smdcntl1             0640  radio        radio
+/dev/smdcntl2             0640  radio        radio
+/dev/smdcntl3             0640  radio        radio
+/dev/smdcntl4             0640  radio        radio
+/dev/smdcntl5             0640  radio        radio
+/dev/smdcntl6             0640  radio        radio
+/dev/smdcntl7             0640  radio        radio
+/dev/sdioctl0             0640  radio        radio
+/dev/sdioctl1             0640  radio        radio
+/dev/sdioctl2             0640  radio        radio
+/dev/sdioctl3             0640  radio        radio
+/dev/sdioctl4             0640  radio        radio
+/dev/sdioctl5             0640  radio        radio
+/dev/sdioctl6             0640  radio        radio
+/dev/sdioctl7             0640  radio        radio
+
+#adsp					drwxr-xr-x   root     root      adsp
+#akm8973_aot				crw-rw-rw-   system   system    akm8973_aot
+#akm8973_daemon				crw-rw-rw-   system   system    akm8973_daemon
+#alarm					crw-rw-r--   system   radio     alarm
+#android_adb				crw-rw----   adb      adb       android_adb
+#android_adb_enable			crw-rw----   adb      adb       android_adb_enable
+#ashmem					crw-rw-rw-   root     root      ashmem
+#binder					crw-rw-rw-   root     root      binder
+#block					drwxr-xr-x   root     root      block
+#bma150					crw-rw-rw-   compass  system    bma150
+#card0					crw-------   root     root      card0
+#console				crw-------   root     root      console
+#cpu_dma_latency			crw-rw-rw-   root     root      cpu_dma_latency
+#cpuctl					drwxr-xr-x   system   system    cpuctl
+#device-mapper				crw-------   root     root      device-mapper
+#diag					crw-rw----   radio    radio     diag
+#dun					prw-rw-rw-   root     root      dun
+#full					crw-rw-rw-   root     root      full
+#fuse					crw-------   root     root      fuse
+#graphics				drwxr-xr-x   root     root      graphics
+#i2c-0					crw-------   root     root      i2c-0
+#i2c-2					crw-------   root     root      i2c-2
+#i2c-3					crw-------   root     root      i2c-3
+#i2c-5					crw-------   root     root      i2c-5
+#input					drwxr-xr-x   root     root      input
+#keychord				crw-------   root     root      keychord
+#kgsl					crw-rw-rw-   root     root      kgsl
+#kmem					crw-------   root     root      kmem
+#kmsg					crw-------   root     root      kmsg
+#log					drwxr-xr-x   root     root      log
+#mem					crw-------   root     root      mem
+#mem_notify				crw-------   root     root      mem_notify
+#msm_aac				crw-------   root     root      msm_aac
+#msm_amrnb				crw-------   root     root      msm_amrnb
+#msm_amrnb_in				crw-------   root     root      msm_amrnb_in
+#msm_amrwb				crw-------   root     root      msm_amrwb
+#msm_camera				drwxr-xr-x   root     root      msm_camera
+#msm_evrc				crw-------   root     root      msm_evrc
+#msm_mp3				crw-rw----   system   audio     msm_mp3
+#msm_pcm_ctl				crw-rw----   system   audio     msm_pcm_ctl
+#msm_pcm_dec				crw-rw----   system   audio     msm_pcm_dec
+#msm_pcm_in				crw-rw----   system   audio     msm_pcm_in
+#msm_pcm_out				crw-rw----   system   audio     msm_pcm_out
+#msm_preproc_ctl			crw-rw----   system   audio     msm_preproc_ctl
+#msm_qcelp				crw-------   root     root      msm_qcelp
+#msm_snd				crw-rw-rw-   system   audio     msm_snd
+#msm_voicememo				crw-------   root     root      msm_voicememo
+#msm_wma				crw-------   root     root      msm_wma
+#msm_wmapro				crw-------   root     root      msm_wmapro
+#mtd					drwxr-xr-x   root     root      mtd
+#network_latency			crw-------   root     root      network_latency
+#network_throughput			crw-------   root     root      network_throughput
+#nmea					crw-------   root     root      nmea
+#null					crw-rw-rw-   root     root      null
+#oncrpc					drwxr-xr-x   root     root      oncrpc
+#pmem					crw-rw----   system   graphics  pmem
+#pmem_adsp				crw-rw----   system   audio     pmem_adsp
+#pmem_audio				crw-------   root     root      pmem_audio
+#ptmx					crw-rw-rw-   root     root      ptmx
+#pts					drwxr-xr-x   root     root      pts
+#qmi0					crw-r-----   radio    radio     qmi0
+#qmi1					crw-r-----   radio    radio     qmi1
+#qmi2					crw-r-----   radio    radio     qmi2
+#random					crw-rw-rw-   root     root      random
+#rtc0					crw-------   root     root      rtc0
+#rtc1					crw-rw----   system   radio     rtc1
+#smd0					crw-r-----   radio    radio     smd0
+#smd21					crw-------   root     root      smd21
+#smd27					crw-------   root     root      smd27
+#smd36					crw-------   root     root      smd36
+#smd7					crw-------   root     root      smd7
+#smdcntl0				crw-------   root     root      smdcntl0
+#smdcntl1				crw-------   root     root      smdcntl1
+#smdcntl2				crw-------   root     root      smdcntl2
+#smem_log				crw-------   root     root      smem_log
+#snd					drwxr-xr-x   root     root      snd
+#socket					drwxrwxr-x   root     net_raw   socket
+#swift_tssc_cal				crw-rw-rw-   root     root      swift_tssc_cal
+#system_bus_freq			crw-rw-rw-   root     root      system_bus_freq
+#tty					crw-rw-rw-   root     root      tty
+#tty0					crw-rw----   root     system    tty0
+#tty1...tty63				crw-------   root     root      tty1...tty63
+#ttyHS0					crw-rw-rw-   bluetoot bluetoot  ttyHS0
+#ttyHSUSB0				crw-------   root     root      ttyHSUSB0
+#ttyHSUSB1				crw-------   root     root      ttyHSUSB1
+#ttyMSM2				crw-------   root     root      ttyMSM2
+#uinput					crw-rw----   system   bluetoot  uinput
+#urandom				crw-rw-rw-   root     root      urandom
+#vcs					crw-------   root     root      vcs
+#vcs7					crw-------   root     root      vcs7
+#vcsa					crw-------   root     root      vcsa
+#vcsa7					crw-------   root     root      vcsa7
+#video20				crw-------   root     root      video20
+#zero					crw-rw-rw-   root     root      zero
