@@ -33,7 +33,8 @@ pm.sleep_mode=2
 
 #Video
 debug.sf.hw=1
-debug.composition.type=mdp
+#debug.composition.type=mdp
+debug.composition.type=gpu
 debug.gr.numframebuffers=2
 #debug.gr.numframebuffers=3
 hwui.render_dirty_regions=false
@@ -45,6 +46,7 @@ video.accelerate.hw=1
 persist.android.strictmode=0
 debug.performance.tuning=1
 com.qc.hardware=true
+com.qc.hdmi_out=false
 
 #WiFi
 wifi.interface=wlan0
