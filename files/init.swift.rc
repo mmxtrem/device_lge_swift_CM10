@@ -153,14 +153,6 @@ service btld /system/bin/logwrapper /system/bin/btld -lpm 1
 	disabled
 	oneshot
 
-service bluetoothd /system/bin/bluetoothd -n
-	class main
-    	socket bluetooth stream 660 bluetooth bluetooth
-    	socket dbus_bluetooth stream 660 bluetooth bluetooth
-    	group bluetooth net_bt_admin misc			
-    	disabled			
-    	socket dbus_bluetooth stream 660 bluetooth bluetooth
-
 service hciattach /system/bin/brcm_patchram_plus --enable_hci --baudrate 3000000 --patchram /system/bin/BCM4325D1_004.002.004.0262.0270.hcd /dev/ttyHS0
 	class main
 	user bluetooth
