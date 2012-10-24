@@ -23,7 +23,11 @@
 
     <!-- Display low battery warning when battery level dips to this value -->
     <integer name="config_lowBatteryWarningLevel">10</integer>
-
+	
+	<!-- Display low battery warning when battery level dips to this value.
+    Also, the battery stats are flushed to disk when we hit this level.  -->
+    <integer name="config_criticalBatteryWarningLevel">5</integer>
+		
     <bool name="config_unplugTurnsOnScreen">true</bool>
 
     <!-- This string array should be overridden by the device to present a list of network
@@ -137,25 +141,12 @@
         <item>20</item>
     </integer-array>
 
-    <!-- Vibrator pattern for feedback about on a key release -->
-    <!--<integer-array name="config_virtualKeyUpPattern">
-        <item>20</item>
-        <item>30</item>
-    </integer-array>-->
-
     <!-- Indicate whether the SD card is accessible without removing the battery. -->
     <bool name="config_batterySdCardAccessibility">true</bool>
 
     <!-- Enables SIP on WIFI only -->
     <bool name="config_sip_wifi_only">false</bool>
      
-    <!-- Enable the screen-on animation -->
-    <!--<bool name="config_enableScreenOnAnimation">false</bool>-->
-
-    <!-- Enable the screen-off animation -->
-   <!-- <bool name="config_enableScreenOffAnimation">true</bool>-->
-
-
     <!-- Package name providing network location support. -->
     <string name="config_networkLocationProviderPackageName">com.google.android.location.NetworkLocationProvider</string>
 
@@ -166,12 +157,21 @@
 
     <bool name="config_forceDisableHardwareKeyboard">true</bool>
 
-   <!-- <integer name="config_screenOnAnimation">0</integer> -->
+	<!-- Values greater or equal to 0 will enable electronbeam screen-on
+    animation with the specified delay (in milliseconds), -1 will disable the animation -->
+   <integer name="config_screenOnAnimation">-1</integer>
+   
+   <!-- True will enable the electron beam screen-off animation. -->
+    <bool name="config_screenOffAnimation">true</bool>
    
    <!-- Enable electron beam animation -->
     <bool name="config_animateScreenLights">false</bool>
    
    <!-- Boolean indicating whether the start command should be called on the wireless interface when starting the SoftAp -->
     <bool name="config_wifiApStartInterface">true</bool>
+	
+   <!-- Boolean indicating if current platform supports bluetooth SCO for off call use cases -->
+    <bool name="config_bluetooth_sco_off_call">true</bool>
+    <bool name="config_bluetooth_wide_band_speech">true</bool>
 
 </resources>
